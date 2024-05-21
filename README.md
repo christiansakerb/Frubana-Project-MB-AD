@@ -5,7 +5,7 @@
 
 Se realizó la lectura de 12 archivos .pkl con las órdenes de ventas mensuales de 1 año. Tras la unificación de estos archivos, se obtuvieron 502.154 registros y 14 columnas, obteniendo el dataframe `ventas_año_completo`. El mes con menor número de registros es abril (32.672) y el de mayor número de registros es marzo (46.944).
 
-![Órdenes de venta](imagenes/imagen 1.png)
+![Órdenes de venta](imagenes/imagen1.png)
 
 Volumen y tipos de datos originales:
 
