@@ -1,5 +1,39 @@
 # Frubana
 
+# ANÁLISIS EXPLORATORIO DE DATOS
+
+## Órdenes de venta
+
+Se realizó la lectura de 12 archivos .pkl con las órdenes de ventas mensuales de 1 año. Tras la unificación de estos archivos, se obtuvieron 502.154 registros y 14 columnas, obteniendo el dataframe `ventas_año_completo`. El mes con menor número de registros es abril (32.672) y el de mayor número de registros es marzo (46.944).
+
+![Órdenes de venta](ruta/a/la/imagen1.png)
+
+Volumen y tipos de datos originales:
+
+![Tipos de datos](ruta/a/la/imagen2.png)
+
+## Productos
+
+Se realizó la lectura de `Productos_BAQ.csv`. La tabla originalmente contiene 137 registros y 11 columnas. Se agregó la columna `producto_general`:
+
+![Productos](ruta/a/la/imagen3.png)
+
+Luego de depuraciones y transformaciones, se obtuvo el dataframe `productos_final`, que contiene 238 registros y 4 columnas: `product_id`, `name`, `producto_general`, `category`.
+
+## Principales validaciones y transformaciones aplicadas a los datos
+
+- Se realizó cambio de `product_id` a tipo entero en el dataframe `ventas_año_completo`.
+- La columna `producto_general` fue creada localmente para agrupar productos del mismo tipo. Ejemplo, todos los tipos de tomate tienen producto general `Tomate`.
+- Se realizó el cruce del dataframe `ventas_año_completo` vs. la tabla de productos recibida originalmente, identificando 101 códigos de productos que figuraban en las órdenes de venta, pero no en la tabla de productos.
+- Se completó la tabla de productos, incluyendo los `producto_id` faltantes asignándoles su respectivo `category` y `producto_general`. Como resultado se obtuvo el dataframe `productos_final`.
+- Unión de `ventas_año_completo` y `productos_final` usando la llave `producto_id`.
+- Se validó que no existen valores nulos en el dataframe resultante.
+- Se eliminaron registros duplicados usando como llave la combinación de los 5 campos: `nro_orden`, `fecha`, `cantidad`, `custumer_id`, `Producto_id`. El dataframe resultante pasó de contener 502.154 a 501.636.
+- No se realizó tratamiento de datos atípicos de ventas, dado que en caso de que existan se espera que el modelo de anomalías a implementar logre alertarlos.
+
+![Validaciones y transformaciones](ruta/a/la/imagen4.png)
+
+
 # Codigo de anomalias 
 
 # Codigo de marketbasket 
