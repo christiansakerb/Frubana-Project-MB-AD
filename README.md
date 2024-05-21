@@ -27,7 +27,7 @@ Finalmente, el **Modelo Market Basket** se centró en el análisis de asociació
 
 
   
-# ANÁLISIS EXPLORATORIO DE DATOS
+## ANÁLISIS EXPLORATORIO DE DATOS
 
 ## Órdenes de venta
 
