@@ -131,8 +131,9 @@ dibujar(df_Reglas_asociación,'Soporte'
 ## Codigo de anomalias
 
 
+## Arquitectura 
 
-
+![Arquitectura](imagenes/arquitectura.png)
 
 | Extracción | Transformación / Carga | Análisis | Uso | Enfoque | Requerimiento | Criterio o métrica de evaluación | Lógica del sector |
 |------------|------------------------|----------|-----|---------|----------------|-------------------------------|-------------------|
