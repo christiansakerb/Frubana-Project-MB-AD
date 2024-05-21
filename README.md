@@ -30,7 +30,7 @@ Luego de depuraciones y transformaciones, se obtuvo el dataframe `productos_fina
 - Se eliminaron registros duplicados usando como llave la combinación de los 5 campos: `nro_orden`, `fecha`, `cantidad`, `custumer_id`, `Producto_id`. El dataframe resultante pasó de contener 502.154 a 501.636.
 - No se realizó tratamiento de datos atípicos de ventas, dado que en caso de que existan se espera que el modelo de anomalías a implementar logre alertarlos.
 
-![Validaciones y transformaciones](imagen4.png)
+![Validaciones y transformaciones](imagenes/imagen4.png)
 
 
 # Codigo de anomalias 
