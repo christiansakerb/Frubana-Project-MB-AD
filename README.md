@@ -60,9 +60,9 @@ Luego de depuraciones y transformaciones, se obtuvo el dataframe `productos_fina
 
 ![Validaciones y transformaciones](imagenes/imagen4.png)
 
-```python
-
 ## Codigo de marketbasket 
+
+```python
 # ...
 
 
@@ -124,6 +124,9 @@ def dibujar(df,columna):
 
 dibujar(df_Reglas_asociación,'Lift')
 dibujar(df_Reglas_asociación,'Soporte'
+# ...
+```
+
 
 ## Codigo de anomalias
 
