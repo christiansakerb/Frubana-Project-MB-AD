@@ -17,6 +17,14 @@
 * Brayan Stiven Torres Ovalle b.torreso@uniandes.edu.co
 
 # Resumen 
+El documento del Proyecto Frubana se divide en tres secciones principales: Análisis Exploratorio de Datos, Algoritmo de Detección de Anomalías y Modelo Market Basket.
+
+En el **Análisis Exploratorio de Datos**, se realizó la lectura de 12 archivos de órdenes de ventas mensuales, consolidando un total de 502,154 registros. Los productos fueron procesados a partir de un archivo CSV, resultando en un dataframe final de 238 registros y cuatro columnas. Este análisis incluyó la transformación y depuración de datos, asegurando la eliminación de duplicados y la validación de la consistencia de los datos. El resultado fue un dataframe final que se utilizará como insumo para los algoritmos de detección de anomalías y análisis de canasta de compra.
+
+Para la **Detección de Anomalías**, se evaluaron varios algoritmos, como Isolation Forest y One-Class SVM, antes de seleccionar un enfoque basado en desviaciones estándar. Este método, aunque sencillo y rápido de implementar, requiere que los datos sigan una distribución normal. Se realizaron ajustes manuales en los umbrales de desviación estándar para optimizar la detección de anomalías, determinando que un valor de desviación estándar de 2 era el más adecuado. Este modelo permite identificar productos con ventas significativamente por encima o por debajo del comportamiento esperado, generando alertas para estos casos.
+
+Finalmente, el **Modelo Market Basket** se centró en el análisis de asociación utilizando el algoritmo Apriori. Este enfoque se basa en medidas de soporte, confianza y lift para identificar relaciones entre productos. Aunque se consideraron otros métodos como la descomposición de valores singulares (SVD) y la disimilaridad del coseno, se optó por Apriori debido a su efectividad en la identificación de patrones de compra. Este modelo permitirá a Frubana comprender mejor las combinaciones de productos más comunes en las ventas y optimizar su estrategia de ventas y marketing.
+
 
   
 # ANÁLISIS EXPLORATORIO DE DATOS
