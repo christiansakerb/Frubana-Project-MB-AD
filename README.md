@@ -60,10 +60,75 @@ Luego de depuraciones y transformaciones, se obtuvo el dataframe `productos_fina
 
 ![Validaciones y transformaciones](imagenes/imagen4.png)
 
+```python
 
-# Codigo de anomalias 
+## Codigo de marketbasket 
+# ...
 
-# Codigo de marketbasket 
+
+soportes = [0.005,0.01,0.02]
+confianzas = [0.5,0.7]
+lifts = [2,4]
+
+Parametros = {}
+Cant_asociaciones = []
+
+for supp in soportes:
+    for conf in confianzas:
+        for lift_valor in lifts:
+            Parametros[supp,conf,lift_valor]=len(list(apriori(records, min_support=supp, min_confidence=conf, min_lift=lift_valor,max_length=3)))
+# ...
+df_calibracion = pd.DataFrame(Parametros.values(),index=Parametros.keys(),columns=['Registros']).sort_values('Registros')
+indices = df_calibracion.index.tolist()
+
+plt.plot(df_calibracion['Registros'].values,color='orange')
+plt.xticks(ticks=range(len(df_calibracion.index)), labels=df_calibracion.index, rotation=90)
+plt.title('Calibración de numero registros')
+plt.show()
+#df_calibracion['Registros'].values
+# ...
+association_rules = apriori(records, min_support=0.01, min_confidence=0.5, min_lift=4,max_length=3)
+association_results = list(association_rules)
+association_results
+
+print("Derivamos {} reglas de asociación.".format(len(association_results)))
+# ...
+def Obtener_Metrica(num):
+    item = association_results[num]
+    pair = item[0] 
+    items = [x for x in pair]
+    
+    #Productos_nombre,Soporte,Confianza,Lift
+    try:
+        regla = items[0]+'->'+items[1]+','+items[2]
+    except:
+        regla = items[0]+'->'+items[1]
+
+    return (regla,item[1],item[2][0][2],item[2][0][3])
+
+Lista_para_df=[]
+for registro in np.arange(0,len(association_results)):
+    Lista_para_df.append(Obtener_Metrica(registro))
+
+df_Reglas_asociación = pd.DataFrame(Lista_para_df,columns=['Regla','Soporte','Confianza','Lift'])
+
+def dibujar(df,columna):
+    df = df.sort_values(columna,ascending=False)
+    plt.figure(figsize=(15,5))
+    plt.bar(x=df['Regla'],height=df[columna],color='orange')
+    plt.title(columna + ' por asociación')
+    plt.xticks(rotation=90,fontsize=6)
+    for num,item in enumerate(df[columna]):
+        plt.text(x=num,y=item,s=np.round(item,2),rotation=90,fontsize=6,va='bottom',ha='center')
+    plt.show()
+
+dibujar(df_Reglas_asociación,'Lift')
+dibujar(df_Reglas_asociación,'Soporte'
+
+## Codigo de anomalias
+
+
+
 
 
 | Extracción | Transformación / Carga | Análisis | Uso | Enfoque | Requerimiento | Criterio o métrica de evaluación | Lógica del sector |
