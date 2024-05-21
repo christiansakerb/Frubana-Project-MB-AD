@@ -1,5 +1,9 @@
 # Frubana
 
+# Codigo de anomalias 
+
+# Codigo de marketbasket 
+
 
 | Extracción | Transformación / Carga | Análisis | Uso | Enfoque | Requerimiento | Criterio o métrica de evaluación | Lógica del sector |
 |------------|------------------------|----------|-----|---------|----------------|-------------------------------|-------------------|
