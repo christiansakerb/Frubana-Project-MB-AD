@@ -129,7 +129,97 @@ dibujar(df_Reglas_asociación,'Soporte'
 
 
 ## Codigo de anomalias
+```python
+# ...
+#generacion del df con los umbrales de alertamiento por producto_general
 
+# Filtrar los meses del 6 al 11, meses que se tomaran para calcular los umbrales de alertamiento
+df_meses_ref = ventas_generales_mes[(ventas_generales_mes['month'] >= 6) & (ventas_generales_mes['month'] <= 11)]
+
+# Agrupar por producto_general, product_unit y month y calcular el promedio y la desviación estándar
+df_umbrales = df_meses_ref.groupby(['producto_general']).agg({
+    'conteo_registros': ['mean', 'std'],
+    'suma_cantidad': ['mean', 'std']
+}).reset_index()
+
+# Renombrar las columnas
+df_umbrales.columns = ['producto_general', 
+                    'promedio_conteo_registros', 'desviacion_conteo_registros', 
+                    'promedio_suma_cantidad', 'desviacion_suma_cantidad']
+
+sd=2 #definir la desviación estándar a considerar
+
+# Calcular los umbrales de alertamiento
+df_umbrales['umbral_inf_conteo'] = df_umbrales['promedio_conteo_registros'] - sd * df_umbrales['desviacion_conteo_registros']
+df_umbrales['umbral_sup_conteo'] = df_umbrales['promedio_conteo_registros'] + sd * df_umbrales['desviacion_conteo_registros']
+df_umbrales['umbral_inf_cantidad'] = df_umbrales['promedio_suma_cantidad'] - sd * df_umbrales['desviacion_suma_cantidad']
+df_umbrales['umbral_sup_cantidad'] = df_umbrales['promedio_suma_cantidad'] + sd * df_umbrales['desviacion_suma_cantidad']
+
+# Mostrar el nuevo DataFrame
+df_umbrales.head(10)
+
+# ...
+
+# Mostrar el número de productos generales únicos en el consolidado deóordenes de venta:
+print("Número de productos generales únicos en el consolidado ventas es:", df['producto_general'].nunique())
+
+
+# Contar el número de alertas por cada item
+num_alertas_dism = len(df_anomalia_dism)
+num_alertas_dism_cant = len(df_anomalia_dism_cant)
+num_alertas_aum = len(df_anomalia_aum)
+num_alertas_aum_cant = len(df_anomalia_aum_cant)
+
+
+# Obtener los productos generales únicos y contar el total de productos con anomalía
+productos_dism = df_anomalia_dism['producto_general'].unique()
+num_productos_dism = len(productos_dism)
+productos_dism_cant = df_anomalia_dism_cant['producto_general'].unique()
+num_productos_dism_cant = len(productos_dism_cant)
+productos_aum = df_anomalia_aum['producto_general'].unique()
+num_productos_aum = len(productos_aum)
+productos_aum_cant = df_anomalia_aum_cant['producto_general'].unique()
+num_productos_aum_cant = len(productos_aum_cant)
+
+
+# Mostrar el resumen de anomalías identificadas
+print("Resumen anomalías identificadas:")
+print("Productos con anomalía por disminución número de ventas:",
+      productos_dism.tolist(), "- Número de alertas:", num_alertas_dism)
+print("Productos con anomalía por disminución cantidades vendidas:",
+      productos_dism_cant.tolist(), "- Número de alertas:", num_alertas_dism_cant)
+print("Productos con anomalía por aumento número de ventas:",
+      productos_aum.tolist(), "- Número de alertas:", num_alertas_aum)
+print("Productos con anomalía por aumento cantidades vendidas:",
+      productos_aum_cant.tolist(), "- Número de alertas:", num_alertas_aum_cant)
+
+
+# Calcular y mostrar el total de alertas
+total_alertas = num_alertas_dism + num_alertas_dism_cant + num_alertas_aum + num_alertas_aum_cant
+print("Total de alertas:", total_alertas)
+
+
+# Combinar todos los productos generales únicos de los 4 criterios
+productos_unicos_alertados = set(df_anomalia_dism['producto_general'].unique()) | \
+                             set(df_anomalia_dism_cant['producto_general'].unique()) | \
+                             set(df_anomalia_aum['producto_general'].unique()) | \
+                             set(df_anomalia_aum_cant['producto_general'].unique())
+
+# Calcular el total de productos generales únicos alertados
+total_productos_unicos_alertados = len(productos_unicos_alertados)
+
+# Mostrar el total de productos generales únicos alertados
+print("Total de productos generales unicos alertados:", total_productos_unicos_alertados)
+
+# Tasa de alertas por producto general
+tasa_alertas_producto = (total_productos_unicos_alertados / df['producto_general'].nunique()) * 100
+# Redondear la tasa de alertas a 2 decimales
+tasa_alertas_producto = round(tasa_alertas_producto, 2)
+# Mostrar la tasa de alertas por producto general
+print("Tasa de alertas (producto_general): ", tasa_alertas_producto, "%")
+
+# ...
+```
 
 ## Arquitectura 
 
