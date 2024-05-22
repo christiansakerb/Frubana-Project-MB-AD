@@ -225,6 +225,8 @@ print("Tasa de alertas (producto_general): ", tasa_alertas_producto, "%")
 
 ![Arquitectura](imagenes/arquitectura.png)
 
+## Manual de usuario para el dashboard
+
 ## Prototipo Fachada
 
 | Extracción | Transformación / Carga | Análisis | Uso | Enfoque | Requerimiento | Criterio o métrica de evaluación | Lógica del sector |
