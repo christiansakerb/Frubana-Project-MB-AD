@@ -226,7 +226,7 @@ print("Tasa de alertas (producto_general): ", tasa_alertas_producto, "%")
 ![Arquitectura](imagenes/arquitectura.png)
 
 # Manual de Usuario para Tableros de Control en Power BI
-### Anomalias
+### Comportamiento de Ventas y Anomalías
 ![Anomalias](imagenes/anomalias.jpg)
 ### Análisis de Canasta de Compra
 ![Marketbasket](imagenes/marketbasket.jpg)
