@@ -225,7 +225,100 @@ print("Tasa de alertas (producto_general): ", tasa_alertas_producto, "%")
 
 ![Arquitectura](imagenes/arquitectura.png)
 
-## Manual de usuario para el dashboard
+# Manual de Usuario para Tableros de Control en Power BI
+### Anomalias
+![Anomalias](imagenes/arquitectura.png)
+### Análisis de Canasta de Compra
+![Marketbasket](imagenes/marketbasket.png)
+
+Este manual de usuario te guiará a través del uso de dos tableros de control en Power BI: uno enfocado en el **Análisis de Canasta de Compra** y el otro en el **Comportamiento de Ventas y Anomalías**. Ambos tableros te ayudarán a entender y analizar mejor los datos de ventas y los patrones de compra de productos.
+
+## Análisis de Canasta de Compra
+
+### Descripción General
+El tablero de **Análisis de Canasta de Compra** proporciona información sobre las asociaciones de productos en las canastas de compra de los clientes. Utiliza métricas como el "lift" para identificar reglas de asociación fuertes entre diferentes productos.
+
+### Componentes del Tablero
+1. **Filtro de Fecha**:
+   - Puedes seleccionar un rango de fechas específico para analizar los datos de las canastas de compra dentro de ese periodo.
+
+2. **Categoría**:
+   - Permite filtrar los datos por categorías específicas de productos.
+
+3. **Tabla de Productos**:
+   - Muestra la cantidad de veces que un producto (Producto_1) aparece junto con otros productos en las canastas de compra.
+   - Los productos se listan en filas y columnas, con los números en las celdas indicando la frecuencia de co-ocurrencia.
+
+4. **Lift Promedio de Reglas**:
+   - Un medidor circular que muestra el lift promedio de todas las reglas de asociación identificadas.
+
+5. **Reglas de Asociación**:
+   - Lista de reglas de asociación, donde se muestra la suma de lift y la suma de soporte para cada regla.
+   - Ejemplo de reglas: "Ahuyama -> Zanahoria, Name" con un lift de 8.59 y un soporte de 0.01.
+
+6. **Gráfico de Lift por Reglas de Asociación**:
+   - Un gráfico de barras que visualiza el lift de las principales reglas de asociación.
+
+### Cómo Usar el Tablero
+1. **Selecciona el Rango de Fecha**:
+   - Usa el deslizador o selecciona manualmente las fechas para ajustar el periodo de análisis.
+
+2. **Filtra por Categoría**:
+   - Utiliza el menú desplegable para enfocarte en una categoría específica si es necesario.
+
+3. **Analiza la Tabla de Productos**:
+   - Observa qué productos tienden a comprarse juntos. Esto puede ayudarte a planificar estrategias de marketing y promociones cruzadas.
+
+4. **Interpreta el Lift Promedio**:
+   - El lift promedio te indica la fuerza general de las asociaciones de productos. Un valor mayor a 1 indica una asociación positiva entre los productos.
+
+5. **Revisa las Reglas de Asociación**:
+   - Examina las reglas con mayor lift para identificar patrones de compra significativos.
+
+6. **Utiliza el Gráfico de Lift**:
+   - Observa visualmente cuáles son las reglas más fuertes en términos de lift.
+
+## Comportamiento de Ventas y Anomalías
+
+### Descripción General
+El tablero de **Comportamiento de Ventas y Anomalías** te permite identificar comportamientos de ventas y detectar anomalías en las ventas de productos. Proporciona un análisis detallado de las ventas promedio, umbrales de ventas, y diferencias en las ventas mensuales.
+
+### Componentes del Tablero
+1. **Filtros de Categoría y Anomalías**:
+   - Puedes filtrar por categoría de producto y por tipo de anomalía (aumento/disminución de ventas o número de productos).
+
+2. **Top Productos con Alertas por Anomalías**:
+   - Lista de productos que muestran anomalías en las ventas, con información sobre ventas promedio, umbrales y diferencias en las ventas.
+
+3. **Gráfico de Ventas por Producto**:
+   - Muestra las ventas mensuales por producto y la participación porcentual en las ventas de su categoría.
+
+4. **Gráfico de Comportamiento de Ventas vs. Umbrales**:
+   - Visualiza las ventas reales versus el promedio de los últimos 6 meses, y los umbrales inferior y superior de ventas.
+
+### Cómo Usar el Tablero
+1. **Selecciona los Filtros**:
+   - Ajusta los filtros para enfocarte en categorías específicas de productos o en tipos de anomalías que deseas investigar.
+
+2. **Analiza los Productos con Anomalías**:
+   - Revisa la tabla para identificar productos que tienen comportamientos de ventas fuera de los umbrales esperados.
+   - Observa las diferencias entre las ventas del último mes y las ventas promedio para detectar posibles problemas o éxitos inesperados.
+
+3. **Observa el Gráfico de Ventas por Producto**:
+   - Compara las ventas mensuales de cada producto y su participación en la categoría a lo largo del tiempo.
+   - Esto te ayudará a entender tendencias estacionales o cambios en la demanda.
+
+4. **Interpreta el Gráfico de Comportamiento de Ventas vs. Umbrales**:
+   - Compara las ventas reales con los umbrales para determinar si las ventas están dentro del rango esperado.
+   - Un valor fuera del umbral puede indicar una anomalía que necesita ser investigada.
+
+### Ejemplo de Uso
+- Si notas que las ventas de "Cebolla" están significativamente por encima del umbral superior, esto puede indicar una demanda inusualmente alta que podría requerir ajustes en el inventario.
+- Analizando las reglas de asociación, si "Ahuyama" se vende frecuentemente con "Zanahoria" y "Name", puedes considerar promociones conjuntas o paquetes de productos.
+
+## Conclusión
+Estos tableros de Power BI te proporcionan herramientas poderosas para analizar patrones de compra y detectar anomalías en las ventas. Utilízalos regularmente para obtener insights valiosos que pueden mejorar la planificación de inventarios, estrategias de marketing y satisfacción del cliente.
+
 
 ## Prototipo Fachada
 
