@@ -10,7 +10,7 @@
 
 ## TABLA DE CONTENIDOS
 - [Resumen](#Resumen)
-- [ANÁLISIS-EXPLORATORIO-DE-DATOS](#ANÁLISIS-EXPLORATORIO-DE-DATOS)
+- [Analisis exploratorio de datos](#ANÁLISIS-EXPLORATORIO-DE-DATOS)
 
 # Titulo: Frubana
 
