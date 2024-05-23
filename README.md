@@ -229,7 +229,7 @@ print("Tasa de alertas (producto_general): ", tasa_alertas_producto, "%")
 ### Anomalias
 ![Anomalias](imagenes/anomalias.png)
 ### Análisis de Canasta de Compra
-![Marketbasket](imagenes/marketbasket.png)
+![Marketbasket](imagenes/marketbasket.jpg)
 
 Este manual de usuario te guiará a través del uso de dos tableros de control en Power BI: uno enfocado en el **Análisis de Canasta de Compra** y el otro en el **Comportamiento de Ventas y Anomalías**. Ambos tableros te ayudarán a entender y analizar mejor los datos de ventas y los patrones de compra de productos.
 
