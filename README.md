@@ -242,7 +242,7 @@ print("Tasa de alertas (producto_general): ", tasa_alertas_producto, "%")
 ### Análisis de Canasta de Compra
 ![Marketbasket](imagenes/marketbasket.jpg)
 
-Este manual de usuario te guiará a través del uso de dos tableros de control en Power BI: uno enfocado en el **Análisis de Canasta de Compra** y el otro en el **Comportamiento de Ventas y Anomalías**. Ambos tableros te ayudarán a entender y analizar mejor los datos de ventas y los patrones de compra de productos.
+Este manual de usuario es una guía a través del uso de dos tableros de control en Power BI: uno enfocado en el **Análisis de Canasta de Compra** y el otro en el **Comportamiento de Ventas y Anomalías**. Ambos tableros te ayudarán a entender y analizar mejor los datos de ventas y los patrones de compra de productos.
 
 ## Análisis de Canasta de Compra
 
@@ -292,7 +292,7 @@ El tablero de **Análisis de Canasta de Compra** proporciona información sobre 
 ## Comportamiento de Ventas y Anomalías
 
 ### Descripción General
-El tablero de **Comportamiento de Ventas y Anomalías** te permite identificar comportamientos de ventas y detectar anomalías en las ventas de productos. Proporciona un análisis detallado de las ventas promedio, umbrales de ventas, y diferencias en las ventas mensuales.
+El tablero de **Comportamiento de Ventas y Anomalías** permite identificar comportamientos de ventas y detectar anomalías en las ventas de productos. Proporciona un análisis detallado de las ventas promedio, umbrales de ventas, y diferencias en las ventas mensuales.
 
 ### Componentes del Tablero
 1. **Filtros de Categoría y Anomalías**:
@@ -324,8 +324,8 @@ El tablero de **Comportamiento de Ventas y Anomalías** te permite identificar c
    - Un valor fuera del umbral puede indicar una anomalía que necesita ser investigada.
 
 ### Ejemplo de Uso
-- Si notas que las ventas de "Cebolla" están significativamente por encima del umbral superior, esto puede indicar una demanda inusualmente alta que podría requerir ajustes en el inventario.
-- Analizando las reglas de asociación, si "Ahuyama" se vende frecuentemente con "Zanahoria" y "Name", puedes considerar promociones conjuntas o paquetes de productos.
+- Se nota que las ventas de "Cebolla" están significativamente por encima del umbral superior, esto puede indicar una demanda inusualmente alta que podría requerir ajustes en el inventario.
+- Analizando las reglas de asociación, si "Ahuyama" se vende frecuentemente con "Zanahoria" y "Name", puede considerar promociones conjuntas o paquetes de productos.
 
 ## Conclusión
 
