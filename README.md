@@ -325,7 +325,12 @@ El tablero de **Comportamiento de Ventas y Anomalías** te permite identificar c
 - Analizando las reglas de asociación, si "Ahuyama" se vende frecuentemente con "Zanahoria" y "Name", puedes considerar promociones conjuntas o paquetes de productos.
 
 ## Conclusión
-Estos tableros de Power BI te proporcionan herramientas poderosas para analizar patrones de compra y detectar anomalías en las ventas. Utilízalos regularmente para obtener insights valiosos que pueden mejorar la planificación de inventarios, estrategias de marketing y satisfacción del cliente.
+
+ La herramienta entregada "Análilis de canasta de compra" le permitirá a Frubana identificar las combinaciones de productos con valores significativos de: soporte, lift y confianza.Esta información es insumo clave para la definición de estrategias de promoción o reubicación de productos, que facilitarán el aumento en  venta cruzada de productos y del número de unidades vendidas por orden.
+
+La  herramienta entregada "Detección de anomalías" le permitirá a Frubana identificar los productos con comportamientos atípicos de venta en el último mes. Esta información es insumo clave para la definición de estrategias de venta, promoción y/o liquidación de productos, tal que pueda mejorarse la eficiencia operativa y la rotación de inventario. 
+
+
 
 
 ## Prototipo Fachada
