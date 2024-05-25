@@ -14,8 +14,8 @@ https://youtu.be/35QuqUWg5QE
 ## TABLA DE CONTENIDOS
 - [Resumen](#Resumen)
 - [Analisis exploratorio de datos](#ANÁLISIS-EXPLORATORIO-DE-DATOS)
-- [Codigo de marketbasket](#Codigo-de-marketbasket)
-- [Codigo de anomalias](#Codigo-de-anomalias)
+- [Código de marketbasket](#Codigo-de-marketbasket)
+- [Código de anomalias](#Codigo-de-anomalias)
 - [Arquitectura](#Arquitectura)
 - [Manual de Usuario para Tableros de Control en Power BI](#Manual-de-Usuario-para-Tableros-de-Control-en-Power-BI)
 
