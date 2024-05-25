@@ -1,6 +1,9 @@
 ![](https://github.com/freddy120/MIAD_Final_project/blob/main/images/miad.jpg)
 # Proyecto final de la Maestría en Inteligencia Analítica de Datos MIAD
 
+## Video
+https://youtu.be/35QuqUWg5QE
+
 ![Python](https://img.shields.io/badge/python-v3.6+-blue.svg)
 [![Build Status](https://travis-ci.org/anfederico/clairvoyant.svg?branch=master)](https://travis-ci.org/freddy120/MIAD_no_supervisado_project)
 ![Dependencies](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)
